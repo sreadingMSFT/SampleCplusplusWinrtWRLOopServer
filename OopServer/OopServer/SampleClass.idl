@@ -1,0 +1,15 @@
+namespace OopServer
+{
+    [default_interface]
+    runtimeclass SampleClass
+    {
+        SampleClass();
+        Int32 MyProperty;
+        AnotherSampleClass GetNonActivatableClass();
+    }
+
+    runtimeclass AnotherSampleClass
+    {
+        Int32 MyProperty { get; };
+    }
+}
