@@ -1,5 +1,5 @@
 ﻿#include "pch.h"
-#include <winrt/OopServer.h>
+#include "SampleClass.h"
 #include <wrl/module.h>
 #include <wil/resource.h>
 
@@ -37,5 +37,5 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)
     }
     CATCH_RETURN()
 
-        return 0;
+    return 0;
 }
