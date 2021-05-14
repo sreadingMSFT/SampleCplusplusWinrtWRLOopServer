@@ -1,5 +1,7 @@
 # Sample out of proc com server callable by UWP packages.
 
+![Alt text here](OopServerDiagram.svg)
+
 ## 1 Setting up the Server
 ### 1.1 Creating the runtime component
 Create a C++/winrt runtime component in the server project
