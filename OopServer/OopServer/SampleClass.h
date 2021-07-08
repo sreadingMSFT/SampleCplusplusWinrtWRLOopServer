@@ -12,6 +12,8 @@ namespace winrt::OopServer::implementation
         int32_t MyProperty();
         void MyProperty(int32_t value);
         winrt::OopServer::AnotherSampleClass GetNonActivatableClass();
+        winrt::Windows::Foundation::IAsyncOperationWithProgress<winrt::OopServer::SampleResult, winrt::OopServer::SampleProgress> SampleAsync();
+        winrt::Windows::Foundation::IAsyncOperationWithProgress<double, double> SampleSimpleAsync();
     private:
         int32_t m_propertyVal = 0;
     };

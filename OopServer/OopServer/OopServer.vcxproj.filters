@@ -14,16 +14,17 @@
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
     <ClCompile Include="AnotherSampleClass.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SampleResult.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="AnotherSampleClass.h" />
+    <ClInclude Include="SampleResult.h" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="SampleClass.idl" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="OopServer.def" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

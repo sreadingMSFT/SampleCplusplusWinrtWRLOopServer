@@ -8,7 +8,9 @@
     mc:Ignorable="d">
 
     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="ClickHandler">Click Me</Button>
+        <Button x:Name="myButton" Click="ClickHandler">Test Property Value</Button>
+        <Button x:Name="asyncTriggerButton" Click="AsyncClickHandler">Test Async Callbacks</Button>
+        <Button x:Name="asyncClassesTriggerButton" Click="AsyncClassesClickHandler">Test Async Callbacks With Classes</Button>
         <TextBlock x:Name="sampleStatusText" Text="" HorizontalAlignment="Center"></TextBlock>
     </StackPanel>
 </Page>

@@ -148,6 +148,7 @@
     <ClInclude Include="SampleClass.h">
       <DependentUpon>SampleClass.idl</DependentUpon>
     </ClInclude>
+    <ClInclude Include="SampleResult.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnotherSampleClass.cpp" />
@@ -159,6 +160,7 @@
       <DependentUpon>SampleClass.idl</DependentUpon>
     </ClCompile>
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="SampleResult.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Midl Include="SampleClass.idl" />

@@ -1,11 +1,29 @@
 namespace OopServer
-{
+{ 
+    struct SampleProgress
+    {
+        UInt32 SampleUInt;
+        UInt32 SampleUInt2;
+        UInt32 SampleUInt3;
+        UInt32 SampleUInt4;
+        UInt32 SampleUInt5;
+    };
+
+    runtimeclass SampleResult
+    {
+        String SampleString{ get; };
+        Boolean SampleBoolean{ get; };
+    }
+
     [default_interface]
     runtimeclass SampleClass
     {
         SampleClass();
         Int32 MyProperty;
         AnotherSampleClass GetNonActivatableClass();
+
+        Windows.Foundation.IAsyncOperationWithProgress<SampleResult, SampleProgress> SampleAsync();
+        Windows.Foundation.IAsyncOperationWithProgress<double, double> SampleSimpleAsync();
     }
 
     runtimeclass AnotherSampleClass

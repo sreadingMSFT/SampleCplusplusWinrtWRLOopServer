@@ -52,4 +52,124 @@ namespace winrt::CallerApp::implementation
         myButton().Content(box_value(L"Clicked"));
         GetPropertyValueFromServer(sampleStatusText());
     }
+
+    IAsyncAction UpdateUIProgress(
+        winrt::Windows::UI::Xaml::Controls::TextBlock statusText,
+        std::wstring statusTextString)
+    {
+        co_await winrt::resume_foreground(statusText.Dispatcher());
+        statusText.Text(statusTextString);
+    }
+
+    IAsyncAction GetAsyncValueFromServer(
+        winrt::Windows::UI::Xaml::Controls::TextBlock textBlock)
+    {
+        co_await winrt::resume_background();
+        SampleClass sample = winrt::create_instance<SampleClass>(CLSID_SampleClass, CLSCTX_LOCAL_SERVER);
+       
+        IAsyncOperationWithProgress<double, double> simpleAsyncOperation = sample.SampleSimpleAsync();
+        simpleAsyncOperation.Progress([=](
+            IAsyncOperationWithProgress<double, double> const& /* sender */,
+            double const& progress)
+            {
+                try
+                {
+                    std::wstring stateStr = L"Got some value";
+                    if (progress == 4)
+                    {
+                        stateStr = L"Got Expected Result!";
+                    }
+                    UpdateUIProgress(textBlock, stateStr).get();
+                }
+                catch (...)
+                {
+
+                }
+            });
+
+        double simpleResult = 0;
+        try
+        {
+            simpleResult = co_await simpleAsyncOperation;
+        }
+        catch (hresult_canceled const&)
+        {
+            OutputDebugString(L"Operation was cancelled");
+        }
+        catch (...)
+        {
+            OutputDebugString(L"Operation failed");
+        }
+
+        // Switch back to ui thread context.
+        co_await winrt::resume_foreground(textBlock.Dispatcher());
+        std::wstring newStatusText{ textBlock.Text() };
+        newStatusText += L", Operation Ended:" + std::to_wstring(simpleResult);
+        textBlock.Text(newStatusText);
+
+    }
+    
+    void MainPage::AsyncClickHandler(IInspectable const&, RoutedEventArgs const&)
+    {
+        asyncTriggerButton().Content(box_value(L"Clicked"));
+        GetAsyncValueFromServer(sampleStatusText());
+    }
+
+    IAsyncAction GetAsyncClassesValueFromServer(
+        winrt::Windows::UI::Xaml::Controls::TextBlock textBlock)
+    {
+        co_await winrt::resume_background();
+        SampleClass sample = winrt::create_instance<SampleClass>(CLSID_SampleClass, CLSCTX_LOCAL_SERVER);
+
+        IAsyncOperationWithProgress<SampleResult, SampleProgress> simpleAsyncOperation = sample.SampleAsync();
+        simpleAsyncOperation.Progress([=](
+            IAsyncOperationWithProgress<SampleResult, SampleProgress> const& /* sender */,
+            SampleProgress const& progress)
+            {
+                try
+                {
+                    std::wstring stateStr = L"Got some value";
+                    if (progress.SampleUInt == 1 && 
+                        progress.SampleUInt2 == 2 && 
+                        progress.SampleUInt3 == 3 && 
+                        progress.SampleUInt4 == 4 &&
+                        progress.SampleUInt5 == 5)
+                    {
+                        stateStr = L"Got 5 UINT Expected Results!";
+                    }
+                    UpdateUIProgress(textBlock, stateStr).get();
+                }
+                catch (...)
+                {
+
+                }
+            });
+
+        SampleResult simpleResult = 0;
+        try
+        {
+            simpleResult = co_await simpleAsyncOperation;
+        }
+        catch (hresult_canceled const&)
+        {
+            OutputDebugString(L"Operation was cancelled");
+        }
+        catch (...)
+        {
+            OutputDebugString(L"Operation failed");
+        }
+
+        // Switch back to ui thread context.
+        co_await winrt::resume_foreground(textBlock.Dispatcher());
+        std::wstring newStatusText{ textBlock.Text() };
+        newStatusText += L", Operation Ended:" + simpleResult.SampleString();
+        textBlock.Text(newStatusText);
+
+    }
+
+    void MainPage::AsyncClassesClickHandler(IInspectable const&, RoutedEventArgs const&)
+    {
+        asyncClassesTriggerButton().Content(box_value(L"Clicked"));
+        GetAsyncClassesValueFromServer(sampleStatusText());
+    }
 }

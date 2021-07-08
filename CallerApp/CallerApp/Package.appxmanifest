@@ -3,7 +3,7 @@
   <Identity
     Name="c7d2fbb8-6b49-4ae1-a600-e6be3a585a15"
     Publisher="CN=sreading"
-    Version="1.0.0.0" />
+    Version="1.0.21.0" />
   <mp:PhoneIdentity PhoneProductId="c7d2fbb8-6b49-4ae1-a600-e6be3a585a15" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
   <Properties>
     <DisplayName>CallerApp</DisplayName>
