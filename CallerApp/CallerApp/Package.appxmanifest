@@ -1,9 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+<Package 
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" 
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
+  IgnorableNamespaces="uap mp">
   <Identity
-    Name="c7d2fbb8-6b49-4ae1-a600-e6be3a585a15"
+    Name="CallerApp"
     Publisher="CN=sreading"
-    Version="1.0.21.0" />
+    Version="1.0.37.0" />
   <mp:PhoneIdentity PhoneProductId="c7d2fbb8-6b49-4ae1-a600-e6be3a585a15" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
   <Properties>
     <DisplayName>CallerApp</DisplayName>
@@ -29,4 +33,20 @@
   <Capabilities>
     <Capability Name="internetClient" />
   </Capabilities>
+  <Extensions>
+    <Extension Category="windows.activatableClass.proxyStub">
+      <ProxyStub ClassId="078ee4e4-0544-495d-9a28-664880a75fa0">
+        <Path>OopServerProxyStub.dll</Path>
+        <Interface Name="ISampleClass" InterfaceId="B0B7F9FC-71EC-5312-8DC0-1B264929F1B2" />
+        <Interface Name="IAnotherSampleClass" InterfaceId="13C7B335-54EF-5194-B727-C3A308258C3C" />
+        <Interface Name="ISampleResult" InterfaceId="A4A98326-15D7-5219-929F-291707D12421" />
+        <Interface Name="IAsyncOperationProgressHandler" InterfaceId="f6dec97d-7f9c-5ad0-8a7d-69a62d88e6f2" />
+        <Interface Name="IAsyncOperationWithProgressCompletedHandler" InterfaceId="131c0702-4d82-5f79-bd14-3abbe9602ccc" />
+        <Interface Name="IAsyncOperationWithProgress" InterfaceId="0a28a37d-128e-5e7c-a782-9a49cb6959d2" />
+        <Interface Name="IAsyncOperationProgressHandler" InterfaceId="feff6cb7-d722-53b8-b567-2369d68be37d" />
+        <Interface Name="IAsyncOperationWithProgressCompletedHandler" InterfaceId="d30897bc-80fc-575a-a6cf-dfd065f03d6d" />
+        <Interface Name="IAsyncOperationWithProgress" InterfaceId="e5477ee2-b431-5cd6-b8c3-0aa588da177e" />
+      </ProxyStub>
+    </Extension>
+  </Extensions>
 </Package>

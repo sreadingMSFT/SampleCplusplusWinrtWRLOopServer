@@ -57,4 +57,7 @@
   <ItemGroup>
     <Text Include="readme.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="$(SolutionDir)..\OopServer\$(Platform)\$(Configuration)\OopServerProxyStub.dll" />
+  </ItemGroup>
 </Project>
