@@ -134,7 +134,7 @@
     </ClCompile>
     <PostBuildEvent>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">WinMdIdl.exe /outdir:$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName) "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.winmd"
-MIdl.exe /env arm /winrt /ns_prefix /metadata_dir "C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.19041.0" /out "$(SolutionDir)\OopServerProxyStub" "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.idl"</Command>
+MIdl.exe /env arm32 /winrt /ns_prefix /metadata_dir "C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.19041.0" /out "$(SolutionDir)\OopServerProxyStub" "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.idl"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">WinMdIdl.exe /outdir:$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName) "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.winmd"
@@ -142,7 +142,7 @@ MIdl.exe /env arm64 /winrt /ns_prefix /metadata_dir "C:\Program Files (x86)\Wind
     </PostBuildEvent>
     <PostBuildEvent>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">WinMdIdl.exe /outdir:$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName) "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.winmd"
-MIdl.exe /env x86 /winrt /ns_prefix /metadata_dir "C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.19041.0" /out "$(SolutionDir)\OopServerProxyStub" "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.idl"</Command>
+MIdl.exe /env win32 /winrt /ns_prefix /metadata_dir "C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.19041.0" /out "$(SolutionDir)\OopServerProxyStub" "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.idl"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">WinMdIdl.exe /outdir:$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName) "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.winmd"
@@ -159,7 +159,7 @@ MIdl.exe /env x64 /winrt /ns_prefix /metadata_dir "C:\Program Files (x86)\Window
     </Link>
     <PostBuildEvent>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">WinMdIdl.exe /outdir:$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName) "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.winmd"
-MIdl.exe /env arm /winrt /ns_prefix /metadata_dir "C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.19041.0" /out "$(SolutionDir)\OopServerProxyStub" "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.idl"</Command>
+MIdl.exe /env arm32 /winrt /ns_prefix /metadata_dir "C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.19041.0" /out "$(SolutionDir)\OopServerProxyStub" "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.idl"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">WinMdIdl.exe /outdir:$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName) "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.winmd"
@@ -167,7 +167,7 @@ MIdl.exe /env arm64 /winrt /ns_prefix /metadata_dir "C:\Program Files (x86)\Wind
     </PostBuildEvent>
     <PostBuildEvent>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">WinMdIdl.exe /outdir:$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName) "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.winmd"
-MIdl.exe /env x86 /winrt /ns_prefix /metadata_dir "C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.19041.0" /out "$(SolutionDir)\OopServerProxyStub" "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.idl"</Command>
+MIdl.exe /env win32 /winrt /ns_prefix /metadata_dir "C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.19041.0" /out "$(SolutionDir)\OopServerProxyStub" "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.idl"</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">WinMdIdl.exe /outdir:$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName) "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName)\OopServer.winmd"
